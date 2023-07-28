@@ -33,6 +33,8 @@ export class GetSearch extends OpenAPIRoute {
 	};
 
 	async handle(request: Request, env, ctx, data: Record<string, any>) {
+		console.log(request.headers)
+		console.log(data)
 		const url = `https://api.github.com/search/repositories?q=${data.q}`;
 
 		const resp = await fetch(url, {
